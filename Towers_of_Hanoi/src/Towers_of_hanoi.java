@@ -91,20 +91,24 @@ class Towers {
 
     public  void display() {
         if(round > 0)System.out.printf("[round %d]\n",round);
-        //System.out.println("  L  |  C  |  R");
-        //System.out.println("---------------");
+        //print Head L C R
+        String bufH,space;
+        space=String.join("", Collections.nCopies(number-1, " "));
+        bufH = space+"L"+space+space+"C"+space+space+"R"+space;
+        System.out.println(bufH);
+        //print Disk in each peg
         for (int i = number - 1; i >= 0; i--) {
             String buf="";
             for (int j = 1; j < tower.length; j++) {
                 int N=0;
                 if(tower[j].size()>i)N=tower[j].get(i);
                 if(N>0) {
-                    buf += String.join("", Collections.nCopies(number - N, " ")) + String.join("", Collections.nCopies((N * 2) - 1, "*")) + String.join("", Collections.nCopies(number - N, " "));
+                    space=String.join("", Collections.nCopies(number - N, " "));
+                    buf += space + String.join("", Collections.nCopies((N * 2) - 1, "*")) +space;
                 }else buf+=String.join("", Collections.nCopies(2*number-1, " "));
             }
 
             System.out.println(buf);
-            //System.out.println("  " + L + "  |  " + C + "  |  " + R);
         }
         System.out.println("\n");
     }
@@ -113,8 +117,7 @@ class Towers {
         tower[1].clear();
         tower[2].clear();
         tower[3].clear();
-    }   
-    
+    }
 }
 //////////////////////////////////////////////////////////////////////////////// 
 
