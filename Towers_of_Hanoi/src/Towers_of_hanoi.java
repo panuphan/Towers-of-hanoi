@@ -87,32 +87,27 @@ class Towers {
         else if(A.equalsIgnoreCase("R"))return 3;
         return 0;
     }
-        
+
+
     public  void display() {
         if(round > 0)System.out.printf("[round %d]\n",round);
-        System.out.println("  L  |  C  |  R");
-        System.out.println("---------------");
+        //System.out.println("  L  |  C  |  R");
+        //System.out.println("---------------");
         for (int i = number - 1; i >= 0; i--) {
-            String d1 = " ", d2 = " ", d3 = " ";
-            
-            //ต้องมี try เพื่อให้ยังสามารถ run ได้
-            try {
-                d1 = String.valueOf(tower[1].get(i));
-            } catch (Exception e) {
+            String buf="";
+            for (int j = 1; j < tower.length; j++) {
+                int N=0;
+                if(tower[j].size()>i)N=tower[j].get(i);
+                if(N>0) {
+                    buf += String.join("", Collections.nCopies(number - N, " ")) + String.join("", Collections.nCopies((N * 2) - 1, "*")) + String.join("", Collections.nCopies(number - N, " "));
+                }else buf+=String.join("", Collections.nCopies(2*number-1, " "));
             }
-            try {
-                d2 = String.valueOf(tower[2].get(i));
-            } catch (Exception e) {
-            }
-            try {
-                d3 = String.valueOf(tower[3].get(i));
-            } catch (Exception e) {
-            }
-            System.out.println("  " + d1 + "  |  " + d2 + "  |  " + d3);
+
+            System.out.println(buf);
+            //System.out.println("  " + L + "  |  " + C + "  |  " + R);
         }
         System.out.println("\n");
     }
-    
 
     public void clear(){
         tower[1].clear();
