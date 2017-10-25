@@ -1,11 +1,5 @@
 import java.io.*;
 import java.util.*;
-/*ที่ต้องทำ:
-    1.เปลี่ยนตัวเลขเป็นดอกจัน*/
-/*
-    มึงงงงงงงเหนนไหมสาสสสสส
-    gsssssssssssss
-*/
 class Towers {
     
 //-----    Creating Stack array  size = 4  
@@ -91,8 +85,8 @@ class Towers {
 
     public  void display() {
         if(round > 0)System.out.printf("[round %d]\n",round);
-        //System.out.println("  L  |  C  |  R");
-        //System.out.println("---------------");
+        
+        //comment ด้วย 
         for (int i = number - 1; i >= 0; i--) {
             String buf="";
             for (int j = 1; j < tower.length; j++) {
@@ -104,7 +98,6 @@ class Towers {
             }
 
             System.out.println(buf);
-            //System.out.println("  " + L + "  |  " + C + "  |  " + R);
         }
         System.out.println("\n");
     }
