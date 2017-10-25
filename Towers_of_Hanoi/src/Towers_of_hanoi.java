@@ -10,7 +10,7 @@ class Towers {
     private int number ;
     private int round ;
     private Stack<Integer>[] tower = new Stack[4];
-   //
+   
     Towers(int N){
         number = N;
         round = 0;
@@ -61,7 +61,7 @@ class Towers {
         // auto is method Recursive
         auto(number,"L","C","R");
     }
-    /**
+    
        
     public  void auto(int number_disks, String a,String b,String c) {
         
