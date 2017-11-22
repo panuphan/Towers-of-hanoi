@@ -1,23 +1,11 @@
-*.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
 
 \.idea/
 
-Towers_of_Hanoi/Towers_of_Hanoi\.iml
+\.iml
 
 
-\Towers_of_Hanoi/build/
-\Towers_of_Hanoi/*.iml
-\Towers_of_Hanoi/nbproject/
-\Towers_of_Hanoi/*.xml
-\Towers_of_Hanoi/*.mf
+\build/
+\*.iml
+\nbproject/
+\*.xml
+\*.mf
